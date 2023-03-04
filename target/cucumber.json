@@ -1,0 +1,77 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2023-03-04T23:30:55.831Z",
+        "line": 11,
+        "name": "Validate the minimum salary",
+        "description": "",
+        "id": "validate-database-connection;validate-the-minimum-salary;database-query;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1234000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user is able to connect to database",
+            "match": {
+              "location": "stepDef.databaseStepDef.databaseStepDef.user_is_able_to_connect_to_database()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 169000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user send \"select min(salary) from employees\" to database",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"select min(salary) from employees\"",
+                  "offset": 10
+                }
+              ],
+              "location": "stepDef.databaseStepDef.databaseStepDef.user_send_to_database(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 90000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Validate the 2100",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2100",
+                  "offset": 13
+                }
+              ],
+              "location": "stepDef.databaseStepDef.databaseStepDef.validate_the(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@db"
+          }
+        ]
+      }
+    ],
+    "name": "Validate database connection",
+    "description": "",
+    "id": "validate-database-connection",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/database/Validate_DatabaseConnection.feature",
+    "tags": []
+  }
+]
