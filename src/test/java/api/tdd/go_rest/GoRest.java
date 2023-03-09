@@ -1,24 +1,22 @@
-package api.tdd;
+package api.tdd.go_rest;
 
 import api.pojo_classes.go_rest.CreateGoRestUser;
-import api.pojo_classes.go_rest.CreateGoRestUserWithLombok;
 import api.pojo_classes.go_rest.UpdateGoRestUser;
-import api.pojo_classes.go_rest.UpdateGoRestUserWithLombok;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.hamcrest.Matchers;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utils.ConfigReader;
+import org.hamcrest.Matchers;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 
-public class GoRestWithLombok {
+public class GoRest {
 
     Response response;
     /**
@@ -26,8 +24,6 @@ public class GoRestWithLombok {
      */
     ObjectMapper objectMapper = new ObjectMapper();
     Faker faker = new Faker();
-
-    int goRestId;
 
     int expectedGoRestID;
     String expectedGoRestName;
@@ -46,92 +42,104 @@ public class GoRestWithLombok {
 
 
     @Test
-    public void goRestCRUDWithLombok() throws JsonProcessingException {
-
-        System.out.println("=============Creating the user==========");
+    public void goRestCRUD() throws JsonProcessingException {
         // Creating a Bean object (POJO)
-        CreateGoRestUserWithLombok createUser = CreateGoRestUserWithLombok
-                .builder()
-                .name("Tech Global")
-                .email(faker.internet().emailAddress())
-                .gender("female")
-                .status("active")
-                .build();
+        CreateGoRestUser createGoRestUser = new CreateGoRestUser();
+        // assigned the values to the attributes
+        createGoRestUser.setName("Tech Global");
+        createGoRestUser.setGender("male");
+        createGoRestUser.setEmail(faker.internet().emailAddress());
+        createGoRestUser.setStatus("active");
 
+        System.out.println("=========Creating the user with POST request=============");
         response = RestAssured
                 .given().log().all()
                 .contentType(ContentType.JSON)
                 .header("Authorization", ConfigReader.getProperty("GoRestToken"))
-                .body(createUser)
+                .body(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(createGoRestUser))
+                //.when().post("https://gorest.co.in/public/v2/users")
                 .when().post("/public/v2/users")
                 .then().log().all()
                 // validating the status code with rest assured
                 .and().assertThat().statusCode(201)
                 // validating the response time is less than the specified one
-                .time(Matchers.lessThan(6000L))
+                .time(Matchers.lessThan(4000L))
                 // validating the value from the body with hamcrest
                 .body("name", equalTo("Tech Global"))
                 // validating the response content type
                 .contentType((ContentType.JSON))
                 .extract().response();
 
-        System.out.println("=============Get the specific the user==========");
-            // get specific user
-       goRestId = response.jsonPath().getInt("id");
+        System.out.println("=========Fetching the user with GET request=============");
+        expectedGoRestID = response.jsonPath().getInt("id");
         response = RestAssured
                 .given().log().all()
                 .contentType(ContentType.JSON)
                 .header("Authorization", ConfigReader.getProperty("GoRestToken"))
-                .when().get("/public/v2/users/" + goRestId)
+                .when().get("/public/v2/users/" + expectedGoRestID)
                 .then().log().all()
                 //validating the status code with rest assured
                 .and().assertThat().statusCode(200)
                 //validating the response time is less than the specified one
-                .time(Matchers.lessThan(6000L))
+                .time(Matchers.lessThan(4000L))
                 //validating the value from the body with hamcrest
                 .body("name", equalTo("Tech Global"))
                 //validating the response content type
                 .contentType(ContentType.JSON)
                 .extract().response();
 
+        System.out.println("=========Updating the user with PUT request=============");
 
-        System.out.println("=============Updating the user==========");
-        // update user
-        // build the update java object body
-        UpdateGoRestUserWithLombok updateGoRestUserWithLombok = UpdateGoRestUserWithLombok
-                .builder()
-                .email(faker.internet().emailAddress())
-                .gender("male")
-                .status("inactive")
-                .build();
+        //createGoRestUser.setName("TechGlobal");
 
+        UpdateGoRestUser updateGoRestUser = new UpdateGoRestUser();
+        updateGoRestUser.setName("TechGlobal");
+        updateGoRestUser.setEmail(faker.internet().emailAddress());
         response = RestAssured
                 .given().log().all()
                 .contentType(ContentType.JSON)
                 .header("Authorization", ConfigReader.getProperty("GoRestToken"))
-                .body(updateGoRestUserWithLombok)
-                .when().put("/public/v2/users/" + goRestId)
+                .body(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(updateGoRestUser))
+                .when().put("/public/v2/users/" + expectedGoRestID)
                 .then().log().all()
-                // validating the status code with rest assured
+                //validating the status code with rest assured
                 .and().assertThat().statusCode(200)
-                // validating the response time is less than the specified one
-                .time(Matchers.lessThan(6000L))
-                // validating the value from the body with hamcrest
-                .body("name", equalTo("Tech Global"))
-                // validating the response content type
-                .contentType((ContentType.JSON))
+                //validating the response time is less than the specified one
+                .time(Matchers.lessThan(4000L))
+                //validating the value from the body with hamcrest
+                .body("name", equalTo("TechGlobal"))
+                //validating the response content type
+                .contentType(ContentType.JSON)
                 .extract().response();
 
+        expectedGoRestName = updateGoRestUser.getName();
+        expectedGoRestEmail = updateGoRestUser.getEmail();
+        expectedGoRestGender = createGoRestUser.getGender();
+        expectedGoRestStatus = createGoRestUser.getStatus();
 
-        System.out.println("=============Deleting the user==========");
+        // "id", "name", "email" in the getInt() is the name of the attribute in the response body
+        int actualGoRestId = response.jsonPath().getInt("id");
+        String actualGoRestName = response.jsonPath().getString("name");
+        String actualGoRestEmail = response.jsonPath().getString("email");
+        String actualGoRestGender = response.jsonPath().getString("gender");
+        String actualGoRestStatus = response.jsonPath().getString("status");
+
+        Assert.assertEquals(actualGoRestId, expectedGoRestID);
+        Assert.assertEquals(actualGoRestName, expectedGoRestName);
+        Assert.assertEquals(actualGoRestEmail, expectedGoRestEmail);
+        Assert.assertEquals(actualGoRestGender, expectedGoRestGender);
+        Assert.assertEquals(actualGoRestStatus, expectedGoRestStatus);
+
+
+        System.out.println("=========Deleting the user with DELETE request=============");
         response = RestAssured
                 .given().log().all()
                 .contentType(ContentType.JSON)
                 .header("Authorization", ConfigReader.getProperty("GoRestToken"))
-                .when().delete("/public/v2/users/" + goRestId)
+                .when().delete("/public/v2/users/"+ expectedGoRestID)
                 .then().log().all()
                 .and().assertThat().statusCode(204)
-                .time(Matchers.lessThan(6000L))
+                .time(Matchers.lessThan(4000L))
                 .extract().response();
     }
 }
