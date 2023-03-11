@@ -1,0 +1,83 @@
+[TRACE] 2023-03-11 13:07:23.426 [main] Log4jAppender - Logging with trace
+[DEBUG] 2023-03-11 13:07:23.429 [main] Log4jAppender - Logging with debug
+[INFO ] 2023-03-11 13:07:23.429 [main] Log4jAppender - Logging with info
+[WARN ] 2023-03-11 13:07:23.429 [main] Log4jAppender - Logging with warn
+[ERROR] 2023-03-11 13:07:23.429 [main] Log4jAppender - Logging with error
+[FATAL] 2023-03-11 13:07:23.429 [main] Log4jAppender - Logging with fatal
+[TRACE] 2023-03-11 13:09:46.022 [main] Log4jAppender - Logging with trace
+[DEBUG] 2023-03-11 13:09:46.025 [main] Log4jAppender - Logging with debug
+[INFO ] 2023-03-11 13:09:46.025 [main] Log4jAppender - Logging with info
+[WARN ] 2023-03-11 13:09:46.025 [main] Log4jAppender - Logging with warn
+[ERROR] 2023-03-11 13:09:46.025 [main] Log4jAppender - Logging with error
+[FATAL] 2023-03-11 13:09:46.025 [main] Log4jAppender - Logging with fatal
+[TRACE] 2023-03-11 13:12:38.209 [main] Log4jAppender - Logging with trace
+[TRACE] 2023-03-11 13:12:38.209 [main] Log4jAppender - Logging with trace
+[DEBUG] 2023-03-11 13:12:38.212 [main] Log4jAppender - Logging with debug
+[DEBUG] 2023-03-11 13:12:38.212 [main] Log4jAppender - Logging with debug
+[INFO ] 2023-03-11 13:12:38.212 [main] Log4jAppender - Logging with info
+[INFO ] 2023-03-11 13:12:38.212 [main] Log4jAppender - Logging with info
+[WARN ] 2023-03-11 13:12:38.212 [main] Log4jAppender - Logging with warn
+[WARN ] 2023-03-11 13:12:38.212 [main] Log4jAppender - Logging with warn
+[ERROR] 2023-03-11 13:12:38.212 [main] Log4jAppender - Logging with error
+[ERROR] 2023-03-11 13:12:38.212 [main] Log4jAppender - Logging with error
+[FATAL] 2023-03-11 13:12:38.213 [main] Log4jAppender - Logging with fatal
+[FATAL] 2023-03-11 13:12:38.213 [main] Log4jAppender - Logging with fatal
+[INFO ] 2023-03-11 13:16:28.538 [main] AddPetToStoreWithLombok - Starting the test suite
+[TRACE] 2023-03-11 13:18:01.925 [main] Log4jAppender - Logging with trace
+[TRACE] 2023-03-11 13:18:01.925 [main] Log4jAppender - Logging with trace
+[DEBUG] 2023-03-11 13:18:01.928 [main] Log4jAppender - Logging with debug
+[DEBUG] 2023-03-11 13:18:01.928 [main] Log4jAppender - Logging with debug
+[INFO ] 2023-03-11 13:18:01.928 [main] Log4jAppender - Logging with info
+[INFO ] 2023-03-11 13:18:01.928 [main] Log4jAppender - Logging with info
+[WARN ] 2023-03-11 13:18:01.928 [main] Log4jAppender - Logging with warn
+[WARN ] 2023-03-11 13:18:01.928 [main] Log4jAppender - Logging with warn
+[ERROR] 2023-03-11 13:18:01.928 [main] Log4jAppender - Logging with error
+[ERROR] 2023-03-11 13:18:01.928 [main] Log4jAppender - Logging with error
+[FATAL] 2023-03-11 13:18:01.928 [main] Log4jAppender - Logging with fatal
+[FATAL] 2023-03-11 13:18:01.928 [main] Log4jAppender - Logging with fatal
+[INFO ] 2023-03-11 13:18:12.412 [main] AddPetToStoreWithLombok - Starting the test suite
+[INFO ] 2023-03-11 13:21:35.907 [main] AddPetToStoreWithLombok - Starting the test suite
+[INFO ] 2023-03-11 13:21:40.879 [main] AddPetToStoreWithLombok - My Actual petId is 8
+[INFO ] 2023-03-11 13:24:33.516 [main] AddPetToStoreWithLombok - Starting the test suite
+[INFO ] 2023-03-11 13:24:40.429 [main] AddPetToStoreWithLombok - My Actual petId is 8
+[DEBUG] 2023-03-11 13:24:40.429 [main] AddPetToStoreWithLombok - The actual pet id should be 8 but we found this 8
+[INFO ] 2023-03-11 13:35:23.614 [main] AddPetToStoreWithLombok - Starting the test suite
+[INFO ] 2023-03-11 13:35:31.958 [main] AddPetToStoreWithLombok - My id with Jayway is 8
+[INFO ] 2023-03-11 13:35:31.958 [main] AddPetToStoreWithLombok - My Actual petId is 8
+[DEBUG] 2023-03-11 13:35:31.958 [main] AddPetToStoreWithLombok - The actual pet id should be 8 but we found this 8
+[INFO ] 2023-03-11 13:37:41.949 [main] AddPetToStoreWithLombok - Starting the test suite
+[INFO ] 2023-03-11 13:37:46.885 [main] AddPetToStoreWithLombok - My id with Jayway is 8
+[INFO ] 2023-03-11 13:37:46.887 [main] AddPetToStoreWithLombok - My pet tag id with Jayway is 15
+[INFO ] 2023-03-11 13:37:46.887 [main] AddPetToStoreWithLombok - My Actual petId is 8
+[DEBUG] 2023-03-11 13:37:46.887 [main] AddPetToStoreWithLombok - The actual pet id should be 8 but we found this 8
+[INFO ] 2023-03-11 13:46:48.510 [main] AddPetToStoreWithLombok - Starting the test suite
+[INFO ] 2023-03-11 13:46:56.623 [main] AddPetToStoreWithLombok - My id with Jayway is 8
+[INFO ] 2023-03-11 13:46:56.624 [main] AddPetToStoreWithLombok - My pet tag id with Jayway is 15
+[INFO ] 2023-03-11 13:46:56.625 [main] AddPetToStoreWithLombok - My Actual petId is 8
+[DEBUG] 2023-03-11 13:46:56.625 [main] AddPetToStoreWithLombok - The actual pet id should be 8 but we found this 8
+[DEBUG] 2023-03-11 14:08:29.395 [main] GoRestWithLombok - The actual name should be Tech Global
+[DEBUG] 2023-03-11 14:38:01.071 [main] GoRest - The actual code should be active
+[DEBUG] 2023-03-11 14:39:21.998 [main] GoRest - The actual code should be active
+[DEBUG] 2023-03-11 14:40:20.757 [main] GoRest - The actual code should be active
+[INFO ] 2023-03-11 15:24:12.978 [main] Class[] - First name from the first cell is Tech Global
+[INFO ] 2023-03-11 15:27:38.028 [main] Class[] - First name from the first cell is Tech Global
+[INFO ] 2023-03-11 15:27:38.032 [main] Class[] - Second Id value is 2.0
+[INFO ] 2023-03-11 15:29:45.790 [main] Class[] - First name from the first cell is Tech Global
+[INFO ] 2023-03-11 15:29:45.794 [main] Class[] - Second Id value is 2.0
+[INFO ] 2023-03-11 15:29:45.794 [main] Class[] - the last row number is 2
+[INFO ] 2023-03-11 15:33:24.185 [main] Class[] - First name from the first cell is Tech Global
+[INFO ] 2023-03-11 15:33:24.189 [main] Class[] - Second Id value is 2.0
+[INFO ] 2023-03-11 15:33:24.189 [main] Class[] - the last row number is 2
+[INFO ] 2023-03-11 15:33:24.189 [main] Class[] - The last cell number is 4
+[INFO ] 2023-03-11 15:43:59.735 [main] Class[] - First name from the first cell is Tech Global
+[INFO ] 2023-03-11 15:43:59.739 [main] Class[] - Second Id value is 2.0
+[INFO ] 2023-03-11 15:43:59.739 [main] Class[] - the last row number is 2
+[INFO ] 2023-03-11 15:43:59.739 [main] Class[] - The last cell number from the file is 4
+[INFO ] 2023-03-11 15:45:05.789 [main] Class[] - First name from the first cell is Tech Global
+[INFO ] 2023-03-11 15:45:05.793 [main] Class[] - Second Id value is 2.0
+[INFO ] 2023-03-11 15:45:05.793 [main] Class[] - the last row number is 2
+[INFO ] 2023-03-11 15:45:05.793 [main] Class[] - The last cell number from the file is 4
+[INFO ] 2023-03-11 15:45:34.000 [main] Class[] - First name from the first cell is Tech Global
+[INFO ] 2023-03-11 15:45:34.004 [main] Class[] - Second Id value is 2.0
+[INFO ] 2023-03-11 15:45:34.004 [main] Class[] - the last row number is 2
+[INFO ] 2023-03-11 15:45:34.004 [main] Class[] - The last cell number from the file is 4

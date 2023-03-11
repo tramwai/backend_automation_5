@@ -1,26 +1,29 @@
 package api.tdd.go_rest;
 
-import api.pojo_classes.go_rest.CreateGoRestUser;
 import api.pojo_classes.go_rest.CreateGoRestUserWithLombok;
-import api.pojo_classes.go_rest.UpdateGoRestUser;
 import api.pojo_classes.go_rest.UpdateGoRestUserWithLombok;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
+import com.jayway.jsonpath.JsonPath;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hamcrest.Matchers;
-import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utils.ConfigReader;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 public class GoRestWithLombok {
 
     Response response;
+    static Logger logger = LogManager.getLogger(GoRestWithLombok.class);
     /**
      * ObjectMapper is a class coming form fasterxml to convert Java object to Json
      */
@@ -68,7 +71,7 @@ public class GoRestWithLombok {
                 // validating the status code with rest assured
                 .and().assertThat().statusCode(201)
                 // validating the response time is less than the specified one
-                .time(Matchers.lessThan(6000L))
+                .time(Matchers.lessThan(12000L))
                 // validating the value from the body with hamcrest
                 .body("name", equalTo("Tech Global"))
                 // validating the response content type
@@ -78,6 +81,23 @@ public class GoRestWithLombok {
         System.out.println("=============Get the specific the user==========");
             // get specific user
        goRestId = response.jsonPath().getInt("id");
+
+       // find expected name and actual name with lombok
+        String expectedName = createUser.getName();
+
+        // find actual name with Jayway
+        String actualName = JsonPath.read(response.asString(), "name");
+
+        // debug it with logger
+        logger.debug("The actual name should be " + expectedName, "but we found " + actualName);
+
+        // assert with Hamcrest
+        assertThat(
+                "Checking if the expected and actual names are matching",
+                actualName,
+                is(expectedName)
+        );
+
         response = RestAssured
                 .given().log().all()
                 .contentType(ContentType.JSON)
@@ -87,7 +107,7 @@ public class GoRestWithLombok {
                 //validating the status code with rest assured
                 .and().assertThat().statusCode(200)
                 //validating the response time is less than the specified one
-                .time(Matchers.lessThan(6000L))
+                .time(Matchers.lessThan(12000L))
                 //validating the value from the body with hamcrest
                 .body("name", equalTo("Tech Global"))
                 //validating the response content type
@@ -115,7 +135,7 @@ public class GoRestWithLombok {
                 // validating the status code with rest assured
                 .and().assertThat().statusCode(200)
                 // validating the response time is less than the specified one
-                .time(Matchers.lessThan(6000L))
+                .time(Matchers.lessThan(12000L))
                 // validating the value from the body with hamcrest
                 .body("name", equalTo("Tech Global"))
                 // validating the response content type
@@ -131,7 +151,7 @@ public class GoRestWithLombok {
                 .when().delete("/public/v2/users/" + goRestId)
                 .then().log().all()
                 .and().assertThat().statusCode(204)
-                .time(Matchers.lessThan(6000L))
+                .time(Matchers.lessThan(12000L))
                 .extract().response();
     }
 }

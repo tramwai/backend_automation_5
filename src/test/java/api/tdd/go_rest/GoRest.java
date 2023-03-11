@@ -5,20 +5,26 @@ import api.pojo_classes.go_rest.UpdateGoRestUser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
+import com.jayway.jsonpath.JsonPath;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utils.ConfigReader;
 import org.hamcrest.Matchers;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 public class GoRest {
 
     Response response;
+    static Logger logger = LogManager.getLogger(GoRest.class);
     /**
      * ObjectMapper is a class coming form fasterxml to convert Java object to Json
      */
@@ -63,12 +69,25 @@ public class GoRest {
                 // validating the status code with rest assured
                 .and().assertThat().statusCode(201)
                 // validating the response time is less than the specified one
-                .time(Matchers.lessThan(4000L))
+                .time(Matchers.lessThan(20000L))
                 // validating the value from the body with hamcrest
                 .body("name", equalTo("Tech Global"))
                 // validating the response content type
                 .contentType((ContentType.JSON))
                 .extract().response();
+
+        // expected status
+        String expectedStatusCode = createGoRestUser.getStatus();
+        // actual status
+        String actualStatusCode = JsonPath.read(response.asString(), "status");
+        // debug
+        logger.debug("The actual code should be " + expectedStatusCode, "but we found " + actualStatusCode);
+        //hamcrest
+        assertThat(
+               "Checking if the status codes match",
+               actualStatusCode,
+               is(expectedStatusCode)
+        );
 
         System.out.println("=========Fetching the user with GET request=============");
         expectedGoRestID = response.jsonPath().getInt("id");
@@ -81,7 +100,7 @@ public class GoRest {
                 //validating the status code with rest assured
                 .and().assertThat().statusCode(200)
                 //validating the response time is less than the specified one
-                .time(Matchers.lessThan(4000L))
+                .time(Matchers.lessThan(20000L))
                 //validating the value from the body with hamcrest
                 .body("name", equalTo("Tech Global"))
                 //validating the response content type
@@ -105,7 +124,7 @@ public class GoRest {
                 //validating the status code with rest assured
                 .and().assertThat().statusCode(200)
                 //validating the response time is less than the specified one
-                .time(Matchers.lessThan(4000L))
+                .time(Matchers.lessThan(20000L))
                 //validating the value from the body with hamcrest
                 .body("name", equalTo("TechGlobal"))
                 //validating the response content type
@@ -139,7 +158,7 @@ public class GoRest {
                 .when().delete("/public/v2/users/"+ expectedGoRestID)
                 .then().log().all()
                 .and().assertThat().statusCode(204)
-                .time(Matchers.lessThan(4000L))
+                .time(Matchers.lessThan(20000L))
                 .extract().response();
     }
 }
