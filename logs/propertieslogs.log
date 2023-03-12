@@ -82,3 +82,22 @@
 [INFO ] 2023-03-11 15:45:34.004 [main] Class[] - the last row number is 2
 [INFO ] 2023-03-11 15:45:34.004 [main] Class[] - The last cell number from the file is 4
 [DEBUG] 2023-03-12 10:34:11.268 [main] GoRestWithLombokSchemaValidation - The actual name should be Tech Global
+[INFO ] 2023-03-12 11:18:21.285 [main] AddPetToStoreWithLombok - Starting the test suite
+[INFO ] 2023-03-12 11:18:27.333 [main] AddPetToStoreWithLombok - My id with Jayway is 8
+[INFO ] 2023-03-12 11:18:27.335 [main] AddPetToStoreWithLombok - My pet tag id with Jayway is 15
+[INFO ] 2023-03-12 11:18:27.336 [main] AddPetToStoreWithLombok - Category id from the response body is 10
+[INFO ] 2023-03-12 11:18:27.336 [main] AddPetToStoreWithLombok - My Actual petId is 8
+[DEBUG] 2023-03-12 11:18:27.336 [main] AddPetToStoreWithLombok - The actual pet id should be 8 but we found this 8
+[INFO ] 2023-03-12 11:27:01.339 [main] AddPetToStoreWithLombok - Starting the test suite
+[INFO ] 2023-03-12 11:27:11.286 [main] AddPetToStoreWithLombok - My id with Jayway is 8
+[INFO ] 2023-03-12 11:27:11.288 [main] AddPetToStoreWithLombok - My pet tag id with Jayway is 15
+[INFO ] 2023-03-12 11:27:11.289 [main] AddPetToStoreWithLombok - Category id from the response body is 10
+[INFO ] 2023-03-12 11:27:11.289 [main] AddPetToStoreWithLombok - My Actual petId is 8
+[DEBUG] 2023-03-12 11:27:11.289 [main] AddPetToStoreWithLombok - The actual pet id should be 8 but we found this 8
+[INFO ] 2023-03-12 11:30:36.335 [main] AddPetToStoreWithLombok - Starting the test suite
+[INFO ] 2023-03-12 11:30:42.883 [main] AddPetToStoreWithLombok - My id with Jayway is 8
+[INFO ] 2023-03-12 11:30:42.885 [main] AddPetToStoreWithLombok - My pet tag id with Jayway is 15
+[INFO ] 2023-03-12 11:30:42.885 [main] AddPetToStoreWithLombok - Category id from the response body is 10
+[INFO ] 2023-03-12 11:30:42.886 [main] AddPetToStoreWithLombok - My Actual petId is 8
+[DEBUG] 2023-03-12 11:30:42.886 [main] AddPetToStoreWithLombok - The actual pet id should be 8 but we found this 8
+[DEBUG] 2023-03-12 11:30:42.903 [main] AddPetToStoreWithLombok - the actual category is 10
