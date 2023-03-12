@@ -101,3 +101,26 @@
 [INFO ] 2023-03-12 11:30:42.886 [main] AddPetToStoreWithLombok - My Actual petId is 8
 [DEBUG] 2023-03-12 11:30:42.886 [main] AddPetToStoreWithLombok - The actual pet id should be 8 but we found this 8
 [DEBUG] 2023-03-12 11:30:42.903 [main] AddPetToStoreWithLombok - the actual category is 10
+[INFO ] 2023-03-12 14:29:04.467 [main] TestingExcelUtil - Opening Excel file
+[INFO ] 2023-03-12 14:29:04.472 [main] ExcelUtil - File ReadData exists
+[INFO ] 2023-03-12 14:29:05.267 [main] ExcelUtil - Sheet Sheet1 exists
+[DEBUG] 2023-03-12 14:29:05.267 [main] TestingExcelUtil - File cannot be opened
+[INFO ] 2023-03-12 14:30:00.577 [main] TestingExcelUtil - Opening Excel file
+[INFO ] 2023-03-12 14:30:00.581 [main] ExcelUtil - File ReadData exists
+[INFO ] 2023-03-12 14:30:01.345 [main] ExcelUtil - Sheet Sheet1 exists
+[INFO ] 2023-03-12 14:30:01.345 [main] TestingExcelUtil - File opened
+[INFO ] 2023-03-12 14:31:00.521 [main] TestingExcelUtil - Opening Excel file
+[INFO ] 2023-03-12 14:31:00.526 [main] ExcelUtil - File ReadData exists
+[INFO ] 2023-03-12 14:31:01.295 [main] ExcelUtil - Sheet Sheet1 exists
+[INFO ] 2023-03-12 14:40:30.790 [main] TestingExcelUtil - Opening Excel file
+[INFO ] 2023-03-12 14:40:30.795 [main] ExcelUtil - File ReadData exists
+[INFO ] 2023-03-12 14:40:31.530 [main] ExcelUtil - Sheet Sheet1 exists
+[INFO ] 2023-03-12 14:40:31.574 [main] TestingExcelUtil - Cell value is 1.0
+[INFO ] 2023-03-12 14:41:42.557 [main] TestingExcelUtil - Opening Excel file
+[INFO ] 2023-03-12 14:41:42.561 [main] ExcelUtil - File ReadData exists
+[INFO ] 2023-03-12 14:41:43.339 [main] ExcelUtil - Sheet Sheet1 exists
+[INFO ] 2023-03-12 14:41:43.344 [main] TestingExcelUtil - Cell value is Tech Solution
+[INFO ] 2023-03-12 15:06:39.529 [main] TestingExcelUtil - Opening Excel file
+[INFO ] 2023-03-12 15:06:39.534 [main] ExcelUtil - File ReadData exists
+[INFO ] 2023-03-12 15:06:40.314 [main] ExcelUtil - Sheet Sheet1 exists
+[INFO ] 2023-03-12 15:06:40.319 [main] TestingExcelUtil - Cell value is Tech Solution
