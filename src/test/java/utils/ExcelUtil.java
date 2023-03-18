@@ -35,7 +35,6 @@ public class ExcelUtil {
         }
     }
 
-
     // getting the single value from the Excel file
     public static String getValue(int rowNumber, int cellNUmber){
         row = sheet.getRow(rowNumber);
@@ -45,7 +44,7 @@ public class ExcelUtil {
 
     // getting al the values
     public static List<List<String>> getValues(){
-        // creating List of List to store all the values from the excel file
+        // creating List of List to store all the values from the Excel file
         List<List<String>> allValues = new ArrayList<>();
 
         // creating loops for getting the rows
@@ -66,4 +65,27 @@ public class ExcelUtil {
         return allValues;
     }
 
+    // convert
+    public static String[][] getExcelData(List<List<String>> listOfList){
+        // Creation of multidimensional array
+        String[][] result = new String[listOfList.size()][];
+
+        // loop the lists to fetch the data and put it into an array
+        for (int i = 0; i < listOfList.size(); i++) {
+            // getting the values from each list
+            List<String> currentList = listOfList.get(i);
+
+            // converting the List into Array and add to the multidimensional array
+            result[i] = currentList.toArray(new String[currentList.size()]);
+        }
+        return result;
+    }
+    // close the workbook
+    public static void closingExcelFile(){
+        try {
+            workbook.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

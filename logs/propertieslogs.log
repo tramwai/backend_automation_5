@@ -124,3 +124,13 @@
 [INFO ] 2023-03-12 15:06:39.534 [main] ExcelUtil - File ReadData exists
 [INFO ] 2023-03-12 15:06:40.314 [main] ExcelUtil - Sheet Sheet1 exists
 [INFO ] 2023-03-12 15:06:40.319 [main] TestingExcelUtil - Cell value is Tech Solution
+[INFO ] 2023-03-14 20:20:00.106 [main] Runner - 
+**************************************************************************************************************
+--------------------------------------   LOCAL PRETTY REPORT CREATED   ----------------------------------------
+Link: http://localhost:63342/backend_automation_5/target/cucumber-html-reports/overview-features.html
+---------------------------------------------------------------------------------------------------------------
+***************************************************************************************************************
+[INFO ] 2023-03-18 11:51:46.118 [main] TestingExcelUtil - Opening Excel file
+[INFO ] 2023-03-18 11:51:46.124 [main] ExcelUtil - File ReadData exists
+[INFO ] 2023-03-18 11:51:47.006 [main] ExcelUtil - Sheet Sheet1 exists
+[INFO ] 2023-03-18 11:51:47.011 [main] TestingExcelUtil - Cell value is Tech Solution

@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2023-03-04T23:30:55.831Z",
+        "start_timestamp": "2023-03-15T01:19:56.997Z",
         "line": 11,
         "name": "Validate the minimum salary",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1234000000,
+              "duration": 1476000000,
               "status": "passed"
             },
             "line": 5,
@@ -25,7 +25,7 @@
           },
           {
             "result": {
-              "duration": 169000000,
+              "duration": 251000000,
               "status": "passed"
             },
             "line": 6,
@@ -43,7 +43,7 @@
           },
           {
             "result": {
-              "duration": 90000000,
+              "duration": 85000000,
               "status": "passed"
             },
             "line": 7,
