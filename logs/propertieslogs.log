@@ -134,3 +134,19 @@ Link: http://localhost:63342/backend_automation_5/target/cucumber-html-reports/o
 [INFO ] 2023-03-18 11:51:46.124 [main] ExcelUtil - File ReadData exists
 [INFO ] 2023-03-18 11:51:47.006 [main] ExcelUtil - Sheet Sheet1 exists
 [INFO ] 2023-03-18 11:51:47.011 [main] TestingExcelUtil - Cell value is Tech Solution
+[INFO ] 2023-03-18 14:29:42.405 [main] AddPetToStoreWithLombok - Starting the test suite
+[INFO ] 2023-03-18 14:29:43.161 [main] ExcelUtil - File PetDataToRead exists
+[DEBUG] 2023-03-18 14:29:43.216 [main] ExcelUtil - PetDataToRead and PetData cannot be found
+[INFO ] 2023-03-18 14:31:52.716 [main] AddPetToStoreWithLombok - Starting the test suite
+[INFO ] 2023-03-18 14:31:57.890 [main] AddPetToStoreWithLombok - My id with Jayway is 8
+[INFO ] 2023-03-18 14:31:57.893 [main] AddPetToStoreWithLombok - My pet tag id with Jayway is 15
+[INFO ] 2023-03-18 14:31:57.894 [main] AddPetToStoreWithLombok - Category id from the response body is 10
+[INFO ] 2023-03-18 14:31:57.894 [main] AddPetToStoreWithLombok - My Actual petId is 8
+[DEBUG] 2023-03-18 14:31:57.894 [main] AddPetToStoreWithLombok - The actual pet id should be 8 but we found this 8
+[DEBUG] 2023-03-18 14:31:57.926 [main] AddPetToStoreWithLombok - the actual category is 10
+[INFO ] 2023-03-18 14:36:12.263 [main] AddPetToStoreWithLombok - Starting the test suite
+[INFO ] 2023-03-18 14:36:13.036 [main] ExcelUtil - File PetDataToRead exists
+[DEBUG] 2023-03-18 14:36:13.088 [main] ExcelUtil - PetDataToRead and PetData cannot be found
+[INFO ] 2023-03-18 14:55:42.633 [main] AddPetToStoreWithLombok - Starting the test suite
+[INFO ] 2023-03-18 14:55:43.370 [main] ExcelUtil - File PetDataToRead exists
+[INFO ] 2023-03-18 14:55:44.060 [main] ExcelUtil - Sheet PetData exists

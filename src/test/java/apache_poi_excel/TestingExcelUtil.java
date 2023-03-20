@@ -19,6 +19,6 @@ public class TestingExcelUtil {
 
         System.out.println(ExcelUtil.getValues());
 
-        System.out.println(Arrays.deepToString(ExcelUtil.getExcelData(ExcelUtil.getValues())));
+        System.out.println(Arrays.deepToString(ExcelUtil.convertListOfListToMultidimensionalArray(ExcelUtil.getValues())));
     }
 }

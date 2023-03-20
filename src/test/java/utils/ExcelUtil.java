@@ -39,6 +39,7 @@ public class ExcelUtil {
     public static String getValue(int rowNumber, int cellNUmber){
         row = sheet.getRow(rowNumber);
         cell = row.getCell(cellNUmber);
+        cell.setCellType(CellType.STRING);
         return cell.toString();
     }
 
@@ -66,7 +67,7 @@ public class ExcelUtil {
     }
 
     // convert
-    public static String[][] getExcelData(List<List<String>> listOfList){
+    public static String[][] convertListOfListToMultidimensionalArray(List<List<String>> listOfList){
         // Creation of multidimensional array
         String[][] result = new String[listOfList.size()][];
 
